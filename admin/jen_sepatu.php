@@ -30,7 +30,7 @@
                 <td><?php echo $data['jenis_sepatu']; ?></td>
                 <td>
                     <span>
-                       <a href="" class="btn btn-warning">Edit</a>
+                       <a href="" class="btn btn-warning">Ubah</a>
                        <a href="" class="btn btn-danger">Hapus</a>
                     </span>
 

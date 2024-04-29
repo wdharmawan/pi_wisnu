@@ -32,7 +32,7 @@
                 <td><?php echo $data['nama_paket']; ?></td>
                 <td><?php echo $data['desk_paket']; ?></td>
                 <td>
-                    <img src="../foto_layanan/<?php echo $data['foto_paket']; ?>" width="100">
+                    <img src="../foto_layanan/<?php echo $data['foto_paket']; ?>" width="300">
                 </td>
                 <td><?php echo $data['harga_paket']; }?></td>
             </tr>
