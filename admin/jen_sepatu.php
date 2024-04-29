@@ -9,7 +9,6 @@
 <body>
     
     <h2>Jenis Sepatu</h2>
-    <h2>jenis</h2>
     
     <table class="table table-bordered text-center">
         <thead>
