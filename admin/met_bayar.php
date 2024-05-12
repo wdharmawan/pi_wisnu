@@ -30,8 +30,9 @@
                 <td><?php echo $data['metode_bayar'];?></td>
                 <td>
                     <span>
-                       <a href="" class="btn btn-warning">Edit</a>
-                       <a href="" class="btn btn-danger">Hapus</a>
+                       <a href="index.php?halaman=ubahMetbayar&id=<?php echo $data['id_metode'] ?>" class="btn btn-warning">Ubah</a>
+                       <!-- ini akan diarahkan ke halaman hapusMetbayar dan ke id yg akan kita hapus -->
+                       <a href="index.php?halaman=hapusMetbayar&id=<?php echo $data['id_metode'] ?>" class="btn btn-danger">Hapus</a>
                     </span>
 
                 </td>

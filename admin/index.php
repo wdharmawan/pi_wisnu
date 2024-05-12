@@ -123,6 +123,29 @@
                         include "tambah_jenis.php";
                     }
 
+                    // jika variabel halaman sama dengan hapusjenis makan akan ke halaman hapusjenis.php
+                    else if ($_GET ["halaman"]=="hapusjenis") {
+                        include "hapusjenis.php";
+                    }
+
+                    // jika variabel halaman sama dengan hapusMetbayar makan akan ke halaman hapusMetbayar.php
+                    else if ($_GET ["halaman"]=="hapusMetbayar") {
+                        include "hapusMetbayar.php";
+                    }
+
+                    // jika variabel halaman sama dengan ubahjenis makan akan ke halaman ubahjenis.php
+                    else if ($_GET ["halaman"]=="ubahjenis") {
+                        include "ubahjenis.php";
+                    }
+
+                    // jika variabel halaman sama dengan ubahjenis makan akan ke halaman ubahMetbayar.php
+                    else if ($_GET ["halaman"]=="ubahMetbayar") {
+                        include "ubahMetbayar.php";
+                    }
+
+
+
+
 
 
                 }
