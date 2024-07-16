@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.wrapper-order {
+    text-align: center;
+}
+
+.form-group {
+    width: 70%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.form-control {
+    border: solid 1px #000;
+    box-shadow: 4px 5px #000;
+    font-size: 20px;
+}
+
+.wrapper-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn-order {
+    width: 30%;
+    height: 35px;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 4px 5px #000;
+
+}
+
+
+/* select {
+    width: fit-content;
+    height: 30px;
+} */
+
+/* .form-select > option {
+    width: 50%;
+} */
+
+
+
+/* tabel admin */
+
+.container-table {
+    overflow-x: auto;
+}
+
+
+/* css halaman pesanan */
+
+.title-pes > h2 {
+    text-align: center;
+}
+
+.wrapper-table  {
+    width: 80%;
+}
+
+.wrapper-table > table {
+    border: solid 2px #000;
+}
+
+.content-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+}
+
+/* halaman harga */
+.content-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container-img {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.container-img img {
+    max-width: 100%;
+    width: 80%;
+    border-radius: 10px;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .content-img {
+        padding: 10px;
+    }
+}
+
+
+
+/* navbar di luar homepage */
+/* Navbar Styles */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    padding: 10px 20px;
+    background-color: #000;
+}
+
+.nav_content {
+    display: flex;
+    justify-content: center;
+}
+
+.nav_content a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+/* Responsive Navbar */
+/* @media (max-width: 400px) {
+    .nav_content {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+    }
+} */

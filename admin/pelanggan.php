@@ -13,52 +13,53 @@
     <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
     <!-- CUSTOM STYLES-->
     <link href="assets/css/custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style2.css">
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 
 <body>
 
-<h2>Data Pelanggan</h2>   
-    
-    <table class="table table-bordered text-center">
-        <thead>
-            <tr>
-                <th>Id Pelanggan</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>No Hp</th>
-                <th>Alamat</th>
-                <!-- <th>Aksi</th> -->
-            </tr>
-        </thead>
-    
-        <tbody>
-            <?php 
+    <h2>Data Pelanggan</h2>
+
+    <div class="container-table">
+        <table class="table table-bordered text-center">
+            <thead>
+                <tr>
+                    <th>Id Pelanggan</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>No Hp</th>
+                    <th>Alamat</th>
+                    <!-- <th>Aksi</th> -->
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php
                 include "function.php";
                 $query = mysqli_query($koneksi, "select id_pel, username_pel, email_pel, nohp_pel, alamat_pel from data_pelanggan");
                 while ($data = mysqli_fetch_array($query)) {
-            ?>
-            <tr>
-                <td><?php echo $data['id_pel']; ?></td>
-                <td><?php echo $data['username_pel']; ?></td>
-                <td><?php echo $data['email_pel']; ?></td>
-                <td><?php echo $data['nohp_pel']; ?></td>
-                <td><?php echo $data['alamat_pel'];?></td>
-                <!-- <td>
+                ?>
+                    <tr>
+                        <td><?php echo $data['id_pel']; ?></td>
+                        <td><?php echo $data['username_pel']; ?></td>
+                        <td><?php echo $data['email_pel']; ?></td>
+                        <td><?php echo $data['nohp_pel']; ?></td>
+                        <td><?php echo $data['alamat_pel']; ?></td>
+                        <!-- <td>
                     <span>
                        <a href="" class="btn btn-info">Edit</a>
                        <a href="" class="btn btn-danger">Hapus</a>
                     </span>
                 </td> -->
 
-            </tr>
-            <?php }?>
-        </tbody>
-    
-    
-    
-    </table>
+                    </tr>
+                <?php } ?>
+            </tbody>
+
+        </table>
+    </div>
 
     <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->

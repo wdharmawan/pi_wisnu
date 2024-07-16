@@ -1,4 +1,12 @@
-﻿
+﻿<?php 
+session_start();
+
+if(!isset($_SESSION['admin'])) {
+    header('location:login.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -28,7 +36,7 @@
                 </button>
                 <a class="navbar-brand" href="index.php">Disaster admin</a> 
             </div>
-    <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;"><a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+    <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;"><a href="index.php?halaman=logout" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
@@ -43,11 +51,11 @@
                     <li><a class="active-menu"  href="index.php?halaman=admin"><i class="fa fa-dashboard fa-3x"></i> Data Admin</a></li>
                     <li><a class="active-menu"  href="index.php?halaman=pesanan"><i class="fa fa-dashboard fa-3x"></i> Data Pesanan</a></li>
                     <li><a class="active-menu"  href="index.php?halaman=data_paket"><i class="fa fa-dashboard fa-3x"></i> Data Layanan</a></li>
-                    <li><a class="active-menu"  href="index.php?halaman=jenis_sepatu"><i class="fa fa-dashboard fa-3x"></i> Jenis Sepatu</a></li>
+                    <li><a class="active-menu"  href="index.php?halaman=jenis_sepatu"><i class="fa fa-dashboard fa-3x"></i>Data Jenis Sepatu</a></li>
                     <li><a class="active-menu"  href="index.php?halaman=dat_transaksi"><i class="fa fa-dashboard fa-3x"></i> Data Transaksi</a></li>
-                    <li><a class="active-menu"  href="index.php?halaman=met_bayar"><i class="fa fa-dashboard fa-3x"></i> Metode Bayar</a></li>
-                    <li><a class="active-menu"  href="index.php?halaman=riview"><i class="fa fa-dashboard fa-3x"></i> Riview</a></li>
-                    <li><a class="active-menu"  href="index.php?halaman=logout"><i class="fa fa-dashboard fa-3x"></i> Logout</a></li>
+                    <li><a class="active-menu"  href="index.php?halaman=met_bayar"><i class="fa fa-dashboard fa-3x"></i>Data Metode Bayar</a></li>
+                    <li><a class="active-menu"  href="index.php?halaman=riview"><i class="fa fa-dashboard fa-3x"></i>Data Riview</a></li>
+                    <li><a class="active-menu" href="index.php?halaman=logout"><i class="fa fa-dashboard fa-3x"></i> Logout</a></li>
                     
                 </ul>
                
@@ -103,14 +111,19 @@
                         include "riview.php";
                     }
 
-                     // jika variabel halaman sama dengan logout makan akan ke halaman pesanan.php
+                    //  jika variabel halaman sama dengan logout makan akan ke halaman pesanan.php
                      else if ($_GET ["halaman"]=="logout") {
-                        include "data_paket.php";
+                        include "logout.php";
                     }
 
                     // jika variabel halaman sama dengan tambahProduk makan akan ke halaman pesanan.php
                     else if ($_GET ["halaman"]=="tambahLayanan") {
                         include "tambah_Layanan.php";
+                    }
+
+                    // jika variabel halaman sama dengan tambahProduk makan akan ke halaman pesanan.php
+                    else if ($_GET ["halaman"]=="tambahPesan") {
+                        include "tambahpesan.php";
                     }
 
                     // jika variabel halaman sama dengan tambahMetode makan akan ke halaman pesanan.php
@@ -133,6 +146,11 @@
                         include "hapusMetbayar.php";
                     }
 
+                    // jika variabel halaman sama dengan hapusPes makan akan ke halaman hapusPes.php
+                    else if ($_GET ["halaman"]=="hapusPes") {
+                        include "hapusPes.php";
+                    }
+
                     // jika variabel halaman sama dengan ubahjenis makan akan ke halaman ubahjenis.php
                     else if ($_GET ["halaman"]=="ubahjenis") {
                         include "ubahjenis.php";
@@ -141,6 +159,11 @@
                     // jika variabel halaman sama dengan ubahjenis makan akan ke halaman ubahMetbayar.php
                     else if ($_GET ["halaman"]=="ubahMetbayar") {
                         include "ubahMetbayar.php";
+                    }
+
+                    // jika variabel halaman sama dengan editPesanan makan akan ke halaman editPesanan.php
+                    else if ($_GET ["halaman"]=="editPesanan") {
+                        include "editPesanan.php";
                     }
 
 
@@ -173,7 +196,7 @@
     <script src="assets/js/morris/morris.js"></script>
       <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
-    
+
    
 </body>
 </html>
