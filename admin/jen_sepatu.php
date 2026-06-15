@@ -36,7 +36,6 @@
                        <a href="index.php?halaman=ubahjenis&id=<?php echo $data['id_jenis'] ?>"  class="btn btn-warning">Ubah</a>
                        <a href="index.php?halaman=hapusjenis&id=<?php echo $data['id_jenis'] ?>" class="btn btn-danger">Hapus</a>
                     </span>
-
                 </td>
         
             </tr>

@@ -75,7 +75,8 @@ include "./admin/function.php";
                             <td>
                                 <span>
                                     <a href="bayarPeng.php?id=<?php echo $data['id_pesanan']; ?>" class="btn btn-warning">Bayar</a>
-                                    <a href="" class="btn btn-danger">Hapus</a>
+                                    <!-- <a href="" class="btn btn-danger">Hapus</a> -->
+                                    <a href="hapusPesanan.php?id=<?php echo $data['id_pesanan']; ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus pesanan ini?');">Hapus</a>
                                 </span> 
                             </td>
     

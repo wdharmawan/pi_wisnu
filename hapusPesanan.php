@@ -1,5 +1,6 @@
 <?php
-include "function.php";
+include "./admin/function.php";
+
 
 if (isset($_GET['id'])) {
     $id_pesanan = $_GET['id'];
@@ -13,18 +14,18 @@ if (isset($_GET['id'])) {
         $delete_pesanan = mysqli_query($koneksi, "DELETE FROM data_pesanan WHERE id_pesanan='$id_pesanan'");
 
         if ($delete_pesanan) {
-            echo "<script>alert('Pesanan berhasil dihapus'); window.location='index.php?halaman=pesanan';</script>";
+            echo "<script>alert('Pesanan berhasil dihapus'); window.location='pesanPeng.php';</script>";
         } else {
             // Jika gagal, tampilkan pesan error
             $error = mysqli_error($koneksi);
-            echo "<script>alert('Gagal menghapus pesanan: $error'); window.location='index.php?halaman=pesanan';</script>";
+            echo "<script>alert('Gagal menghapus pesanan: $error'); window.location='pesanPeng.php';</script>";
         }
     } else {
         // Jika penghapusan di tabel data_transaksi gagal, tampilkan pesan error
         $error = mysqli_error($koneksi);
-        echo "<script>alert('Gagal menghapus transaksi: $error'); window.location='index.php?halaman=pesanan';</script>";
+        echo "<script>alert('Gagal menghapus transaksi: $error'); window.location='pesanPeng.php';</script>";
     }
 } else {
-    echo "<script>alert('ID tidak ditemukan'); window.location='index.php?halaman=pesanan';</script>";
+    echo "<script>alert('ID tidak ditemukan'); window.location='pesanPeng.php';</script>";
 }
 ?>

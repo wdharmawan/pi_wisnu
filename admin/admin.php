@@ -27,11 +27,17 @@
         
             <tbody>
                 <?php 
+                    // Mengimpor file function.php yang berisi fungsi dan koneksi ke database
                     include "function.php";
+
+                    // Melakukan query ke database untuk mengambil data dari tabel data_admin
                     $query = mysqli_query($koneksi, "select id_admin, username_admin, email_admin, nohp_admin, alamat_admin from data_admin");
+
+                    // Mengambil setiap baris hasil query dan menampilkannya dalam tabel
                     while ($data = mysqli_fetch_array($query)) {
                 ?>
                 <tr>
+                    <!-- Menampilkan data untuk setiap kolom dalam tabel -->
                     <td><?php echo $data['id_admin']; ?></td>
                     <td><?php echo $data['username_admin']; ?></td>
                     <td><?php echo $data['email_admin']; ?></td>

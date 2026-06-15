@@ -1,13 +1,5 @@
 <?php
-// Mulai sesi
 session_start();
-
-// Periksa apakah pengguna sudah login
-if (!isset($_SESSION['user'])) {
-    // Jika belum login, alihkan ke halaman login
-    header("Location: loginPeng.php");
-    exit();
-}
 ?>
 
 <!DOCTYPE html>
@@ -16,14 +8,10 @@ if (!isset($_SESSION['user'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman setelah login</title>
-    <link rel="stylesheet" href="./admin/assets/css/style.css">
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Halaman Sebelum Login</title>
+    <link rel="stylesheet" href="admin/assets/css/style.css">
+    <link rel="stylesheet" href="admin/assets/css/bootstrap.css">
     <!-- <link rel="stylesheet" href="admin/assets/css/font-awesome.css"> -->
-    <!-- font -->
 </head>
 
 <body class="body">
@@ -34,17 +22,18 @@ if (!isset($_SESSION['user'])) {
         </div>
         <div class="nav_container">
             <nav class="nav_content">
-                <a href="#home">Home</a>
-                <a href="order.php">Order</a>
-                <a href="pesanPeng.php">Pesanan</a>
-                <a href="riwayat.php">Riwayat</a>
-                <a href="#about">About</a>
-                <a href="riviewPeng.php">Review</a>
-                <?php if (isset($_SESSION['user'])): ?>
-                    <a href="logoutPeng.php" onclick="return confirm('Apakah anda yakin ingin keluar?')">Logout</a>
-                <?php else: ?>
+
+                <!-- Setiap tautan mengarah ke bagian yang sesuai dengan menggunakan onclick -->
+                <a href="#intro" onclick="toggleMenu()">Home</a>
+                <a href="#package" onclick="toggleMenu()">Layanan</a>
+                <a href="#about" onclick="toggleMenu()">About</a>
+                <a href="#contact" onclick="toggleMenu()">Contact</a>
+                <?php if (isset($_SESSION['user'])) : ?>
+                    <a href="logoutPeng.php">Logout</a>
+                <?php else : ?>
                     <a href="loginPeng.php">Login</a>
                 <?php endif; ?>
+
             </nav>
             <div class="menu-toggle">
                 <span></span>
@@ -56,7 +45,7 @@ if (!isset($_SESSION['user'])) {
     <!-- akhir navbar -->
 
     <!-- awal background -->
-    <div class="container-title">
+    <div class="container-title" id="intro">
         <h1><b>DISASTER WASH SHOES</b></h1>
         <h3><b>"Kami Akan Mengatasi Kemalangan Sepatu Anda"</b></h3>
     </div>
@@ -76,9 +65,8 @@ if (!isset($_SESSION['user'])) {
     </div>
     <!-- akhir bagian about -->
 
-    <div class="div_container" id="home">
-
-        <div class="package_content" id="package">
+    <div class="div_container" id="package">
+        <div class="package_content">
             <div class="package_title">
                 <p>OUR PACKAGE</p>
             </div>
@@ -162,6 +150,16 @@ if (!isset($_SESSION['user'])) {
 
     <!-- js responsive navbar -->
     <script src="admin/assets/js/responsive.js"></script>
+
+    <!-- Script JavaScript untuk menangani menu toggle -->
+    <script>
+        function toggleMenu() {
+            // Ambil elemen navigasi berdasarkan kelas
+            var navContent = document.querySelector('.nav_content');
+            // Toggle kelas 'active' pada elemen navigasi
+            navContent.classList.toggle('active');
+        }
+    </script>
 
 </body>
 

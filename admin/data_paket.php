@@ -25,15 +25,22 @@
         
             <tbody>
                 <?php 
+                    // Mengimpor file function.php yang berisi fungsi dan koneksi ke database
                     include "function.php";
+
+                    // Melakukan query ke database untuk mengambil semua data dari tabel layanan
                     $query = mysqli_query($koneksi, "select * from layanan");
+
+                     // Mengambil setiap baris hasil query dan menampilkannya dalam tabel
                     while ($data = mysqli_fetch_array($query)) {
                 ?>
                 <tr>
+                     <!-- Menampilkan data untuk setiap kolom dalam tabel -->
                     <td><?php echo $data['id_paket']; ?></td>
                     <td><?php echo $data['nama_paket']; ?></td>
                     <td><?php echo $data['desk_paket']; ?></td>
                     <td>
+                        <!-- Menampilkan gambar berdasarkan file foto yang diambil dari database -->
                         <img src="../foto_layanan/<?php echo $data['foto_paket']; ?>" width="300">
                     </td>
                     <td><?php echo $data['harga_paket']; }?></td>

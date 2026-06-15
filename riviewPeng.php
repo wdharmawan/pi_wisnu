@@ -35,7 +35,7 @@ include "./admin/function.php";
     <!--awal membuat order  -->
     <div class="container-order">
         <div class="wrapper-order">
-            <h1><b>Menu Riview</b></h1>
+            <h1><b>Menu Review</b></h1>
         </div>
         <div class="order-form">
             <form class="wrapper-form" method="post" enctype="multipart/form-data">
@@ -44,7 +44,7 @@ include "./admin/function.php";
                     <input type="text" class="form-control" name="nama" id="nama" required>
                 </div>
                 <div class="form-group">
-                    <label for="riview">Riview</label>
+                    <label for="riview">Review</label>
                     <textarea class="form-control" name="riview" id="riview" rows="5" required></textarea>
                 </div>
                 <button class="btn btn-primary" name="simpan">Simpan</button>
@@ -54,15 +54,22 @@ include "./admin/function.php";
 
 
     <?php
+    // Kondisi if ini memeriksa apakah tombol submit (dengan nama simpan) telah diklik. Jika ya, blok kode di dalamnya akan dieksekusi.
     if (isset($_POST['simpan'])) {
+
+        // Mengambil nilai nama dan riview dari form yang dikirimkan menggunakan metode POST.
         $nama = $_POST['nama'];
         $riview = $_POST['riview'];
 
         // Validasi dasar
         if (!empty($nama) && !empty($riview)) {
+            // Mempersiapkan pernyataan SQL untuk menyimpan data ke dalam tabel data_riview.
             $stmt = $koneksi->prepare("INSERT INTO data_riview (nama, riview) VALUES (?, ?)");
+
+            // Mengikat parameter nama dan riview ke pernyataan yang dipersiapkan. "ss" menunjukkan bahwa kedua parameter bertipe string (s).
             $stmt->bind_param("ss", $nama, $riview);
 
+            // Menjalankan pernyataan SQL untuk menyimpan data ke database
             if ($stmt->execute()) {
                 echo "<div class='alert alert-info'>Data Tersimpan</div>";
                 echo "<meta http-equiv='refresh' content='1;url=riviewPeng.php'>";

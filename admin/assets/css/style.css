@@ -6,13 +6,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 
 html, body {
     height: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: "Poppins", sans-serif; */
 }
 
 .page-login {
@@ -222,6 +222,11 @@ html, body {
     background-color: #000;
     padding-left: 64px;
     padding-right: 64px;
+    width: 100%;
+    /* height: fit-content; */
+    position: fixed;
+    /* top: 0;
+    left: 0; */ 
 }
 
 .logo {
@@ -230,8 +235,8 @@ html, body {
 
 .logo_content {
     max-width: 100px;
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
 }
 
@@ -279,7 +284,7 @@ html, body {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 16%;
+        top: 90%;
         right: 0;
         background-color: #000;
         width: 100%;
@@ -602,7 +607,7 @@ html, body {
 }
 
 .contact_title {
-    background-color: #272626;
+    background-color: #000;
     height: 82px;
     display: flex;
     align-items: center;

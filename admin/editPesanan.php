@@ -1,15 +1,22 @@
 <?php
 // session_start();
+
+// Mengimpor file function.php yang berisi koneksi ke database dan fungsi lainnya
 include "function.php";
 
+// Mengambil nilai id_pesanan dari URL
 $id_pesanan = $_GET['id'];
+
+// Menjalankan query SQL untuk mengambil data pesanan berdasarkan id_pesanan yang diambil dari URL
 $query = mysqli_query($koneksi, "SELECT dp.*, l.nama_paket AS nama_paket, dj.jenis_sepatu AS jenis_sepatu 
                                  FROM data_pesanan dp 
                                  JOIN layanan l ON dp.id_paket = l.id_paket 
                                  JOIN data_jenis dj ON dp.id_jenis = dj.id_jenis 
                                  WHERE dp.id_pesanan='$id_pesanan'");
+// Menyimpan hasil query dalam variabel $data                                 
 $data = mysqli_fetch_array($query);
 
+// Memeriksa apakah form telah disubmit
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_pesanan = $_POST['id_pesanan'];
     $nama_pem = $_POST['nama_pem'];
@@ -64,15 +71,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <!-- <input type="text" class="form-control" name="nama_paket" value="<?php echo $data['nama_paket']; ?>" readonly><br> -->
             <select name="id_paket" class="form-control">
                 <?php
+                  // Mengambil semua paket layanan dari database untuk diisi dalam dropdown
                 $paketQuery = mysqli_query($koneksi, "SELECT * FROM layanan");
                 while ($paket = mysqli_fetch_array($paketQuery)) {
                     echo '<option value="' . $paket['id_paket'] . '"' . ($data['id_paket'] == $paket['id_paket'] ? ' selected' : '') . '>' . $paket['nama_paket'] . '</option>';
                 }
                 ?>
             </select><br>
+
             <label>Jenis Sepatu:</label>
             <select name="id_jenis" class="form-control">
                 <?php
+                 // Mengambil semua jenis sepatu dari database untuk diisi dalam dropdown
                 $jenisQuery = mysqli_query($koneksi, "SELECT * FROM data_jenis");
                 while ($jenis = mysqli_fetch_array($jenisQuery)) {
                     echo '<option value="' . $jenis['id_jenis'] . '"' . ($data['id_jenis'] == $jenis['id_jenis'] ? ' selected' : '') . '>' . $jenis['jenis_sepatu'] . '</option>';
@@ -81,12 +91,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </select><br>
             <label>Tanggal Pesan:</label>
             <input type="date" class="form-control" name="tanggal_pesan" value="<?php echo $data['tanggal_pesan']; ?>"><br>
+            
             <label>Status Pesanan:</label>
             <select name="status_pes" class="form-control">
                 <option value="diproses" <?php if ($data['status_pes'] == 'diproses') echo 'selected'; ?>>Diproses</option>
                 <option value="dijemput" <?php if ($data['status_pes'] == 'dijemput') echo 'selected'; ?>>Dijemput</option>
+                <option value="dikirim" <?php if ($data['status_pes'] == 'dikirim') echo 'selected'; ?>>Dikirim</option>
                 <option value="selesai" <?php if ($data['status_pes'] == 'selesai') echo 'selected'; ?>>Selesai</option>
             </select><br>
+
             <label>Status Transaksi:</label>
             <select name="status_transaksi" class="form-control">
                 <option value="Lunas" <?php if ($data['status_transaksi'] == 'Lunas') echo 'selected'; ?>>Lunas</option>
