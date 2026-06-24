@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lokasi = $_FILES['gambar']['tmp_name'];
 
     // Pindahkan file yang diunggah ke direktori yang ditentukan
-    move_uploaded_file($lokasi, "./foto_layanan/" . $nama);
+    move_uploaded_file($lokasi, "./bukti_pembayaran/" . $nama);
 
     // Ambil nilai dari form
     $id_pesanan = $_POST['pesan'];

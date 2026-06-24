@@ -44,8 +44,8 @@ include "./admin/function.php";
                     <input type="text" class="form-control" name="nama" id="nama" required>
                 </div>
                 <div class="form-group">
-                    <label for="riview">Review</label>
-                    <textarea class="form-control" name="riview" id="riview" rows="5" required></textarea>
+                    <label for="review">Review</label>
+                    <textarea class="form-control" name="review" id="review" rows="5" required></textarea>
                 </div>
                 <button class="btn btn-primary" name="simpan">Simpan</button>
             </form>
@@ -57,22 +57,22 @@ include "./admin/function.php";
     // Kondisi if ini memeriksa apakah tombol submit (dengan nama simpan) telah diklik. Jika ya, blok kode di dalamnya akan dieksekusi.
     if (isset($_POST['simpan'])) {
 
-        // Mengambil nilai nama dan riview dari form yang dikirimkan menggunakan metode POST.
+        // Mengambil nilai nama dan review dari form yang dikirimkan menggunakan metode POST.
         $nama = $_POST['nama'];
-        $riview = $_POST['riview'];
+        $review = $_POST['review'];
 
         // Validasi dasar
-        if (!empty($nama) && !empty($riview)) {
+        if (!empty($nama) && !empty($review)) {
             // Mempersiapkan pernyataan SQL untuk menyimpan data ke dalam tabel data_riview.
             $stmt = $koneksi->prepare("INSERT INTO data_riview (nama, riview) VALUES (?, ?)");
 
-            // Mengikat parameter nama dan riview ke pernyataan yang dipersiapkan. "ss" menunjukkan bahwa kedua parameter bertipe string (s).
-            $stmt->bind_param("ss", $nama, $riview);
+            // Mengikat parameter nama dan review ke pernyataan yang dipersiapkan. "ss" menunjukkan bahwa kedua parameter bertipe string (s).
+            $stmt->bind_param("ss", $nama, $review);
 
             // Menjalankan pernyataan SQL untuk menyimpan data ke database
             if ($stmt->execute()) {
                 echo "<div class='alert alert-info'>Data Tersimpan</div>";
-                echo "<meta http-equiv='refresh' content='1;url=riviewPeng.php'>";
+                echo "<meta http-equiv='refresh' content='1;url=reviewPeng.php'>";
             } else {
                 echo "<div class='alert alert-danger'>Data Gagal Tersimpan: " . $stmt->error . "</div>";
             }

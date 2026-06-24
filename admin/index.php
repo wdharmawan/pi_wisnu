@@ -54,7 +54,7 @@ if(!isset($_SESSION['admin'])) {
                     <li><a class="active-menu"  href="index.php?halaman=jenis_sepatu"><i class="fa fa-dashboard fa-3x"></i>Data Jenis Sepatu</a></li>
                     <li><a class="active-menu"  href="index.php?halaman=dat_transaksi"><i class="fa fa-dashboard fa-3x"></i> Data Transaksi</a></li>
                     <li><a class="active-menu"  href="index.php?halaman=met_bayar"><i class="fa fa-dashboard fa-3x"></i>Data Metode Bayar</a></li>
-                    <li><a class="active-menu"  href="index.php?halaman=riview"><i class="fa fa-dashboard fa-3x"></i>Data Riview</a></li>
+                    <li><a class="active-menu"  href="index.php?halaman=review"><i class="fa fa-dashboard fa-3x"></i>Data Review</a></li>
                     <li><a class="active-menu" href="index.php?halaman=logout"><i class="fa fa-dashboard fa-3x"></i> Logout</a></li>
                     
                 </ul>
@@ -75,7 +75,7 @@ if(!isset($_SESSION['admin'])) {
                         include "pelanggan.php";
                     }
 
-                    // jika variabel halaman sama dengan riview makan akan ke halaman pesanan.php
+                    // jika variabel halaman sama dengan admin makan akan ke halaman admin.php
                     else if ($_GET ["halaman"]=="admin") {
                         include "admin.php";
                     }
@@ -86,52 +86,52 @@ if(!isset($_SESSION['admin'])) {
                     }
 
 
-                    // jika variabel halaman sama dengan layanan makan akan ke halaman pesanan.php
+                    // jika variabel halaman sama dengan data_paket makan akan ke halaman data_paket.php
                     else if ($_GET ["halaman"]=="data_paket") {
                         include "data_paket.php";
                     }
 
-                    // jika variabel halaman sama dengan jenis_sepatu  makan akan ke halaman pesanan.php
+                    // jika variabel halaman sama dengan jenis_sepatu  makan akan ke halaman jenis_sepatu.php
                     else if ($_GET ["halaman"]=="jenis_sepatu") {
                         include "jen_sepatu.php";
                     }
 
-                    // jika variabel halaman sama dengan dat_transaksi makan akan ke halaman pesanan.php
+                    // jika variabel halaman sama dengan dat_transaksi makan akan ke halaman transaksi.php
                     else if ($_GET ["halaman"]=="dat_transaksi") {
                         include "transaksi.php";
                     }
 
-                    // jika variabel halaman sama dengan met_bayar makan akan ke halaman pesanan.php
+                    // jika variabel halaman sama dengan met_bayar makan akan ke halaman met_bayar.php
                     else if ($_GET ["halaman"]=="met_bayar") {
                         include "met_bayar.php";
                     }
 
-                     // jika variabel halaman sama dengan riview makan akan ke halaman pesanan.php
-                     else if ($_GET ["halaman"]=="riview") {
-                        include "riview.php";
+                     // jika variabel halaman sama dengan review makan akan ke halaman review.php
+                     else if ($_GET ["halaman"]=="review") {
+                        include "review.php";
                     }
 
-                    //  jika variabel halaman sama dengan logout makan akan ke halaman pesanan.php
+                    //  jika variabel halaman sama dengan logout makan akan ke halaman logout.php
                      else if ($_GET ["halaman"]=="logout") {
                         include "logout.php";
                     }
 
-                    // jika variabel halaman sama dengan tambahProduk makan akan ke halaman pesanan.php
+                    // jika variabel halaman sama dengan tambahLayanan makan akan ke halaman tambah_Layanan.php
                     else if ($_GET ["halaman"]=="tambahLayanan") {
                         include "tambah_Layanan.php";
                     }
 
-                    // jika variabel halaman sama dengan tambahProduk makan akan ke halaman pesanan.php
+                    // jika variabel halaman sama dengan tambahPesan makan akan ke halaman tambahPesan.php
                     else if ($_GET ["halaman"]=="tambahPesan") {
                         include "tambahpesan.php";
                     }
 
-                    // jika variabel halaman sama dengan tambahMetode makan akan ke halaman pesanan.php
+                    // jika variabel halaman sama dengan tambahMetode makan akan ke halaman tambahMetode.php
                     else if ($_GET ["halaman"]=="tambahMetode") {
                         include "tambah_metbayar.php";
                     }
 
-                    // jika variabel halaman sama dengan tambahMetode makan akan ke halaman pesanan.php
+                    // jika variabel halaman sama dengan tambahJenis makan akan ke halaman tambah_jenis.php
                     else if ($_GET ["halaman"]=="tambahJenis") {
                         include "tambah_jenis.php";
                     }

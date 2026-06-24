@@ -39,7 +39,7 @@
                     <td><?php echo $data['metode_bayar']; ?></td>
                     <td><?php echo $data['total_bayar']; ?></td>
                     <td>
-                        <img src="../foto_layanan/<?php echo $data['bukti_pem']; ?>" alt="bukti" width="300">
+                        <img src="../bukti_pembayaran/<?php echo $data['bukti_pem']; ?>" alt="bukti" width="300">
                     </td>
                     <!-- <td>
                         <span>

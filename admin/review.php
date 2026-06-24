@@ -16,7 +16,7 @@
             <tr>
                 <th>No</th>
                 <th>nama</th>
-                <th>Riview</th>
+                <th>Review</th>
             </tr>
         </thead>
 

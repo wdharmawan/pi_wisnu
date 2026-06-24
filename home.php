@@ -18,6 +18,7 @@ if (!isset($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman setelah login</title>
     <link rel="stylesheet" href="./admin/assets/css/style.css">
+    <link rel="stylesheet" href="admin/assets/css/bootstrap.css">
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +40,7 @@ if (!isset($_SESSION['user'])) {
                 <a href="pesanPeng.php">Pesanan</a>
                 <a href="riwayat.php">Riwayat</a>
                 <a href="#about">About</a>
-                <a href="riviewPeng.php">Review</a>
+                <a href="reviewPeng.php">Review</a>
                 <?php if (isset($_SESSION['user'])): ?>
                     <a href="logoutPeng.php" onclick="return confirm('Apakah anda yakin ingin keluar?')">Logout</a>
                 <?php else: ?>
@@ -58,7 +59,7 @@ if (!isset($_SESSION['user'])) {
     <!-- awal background -->
     <div class="container-title">
         <h1><b>DISASTER WASH SHOES</b></h1>
-        <h3><b>"Kami Akan Mengatasi Kemalangan Sepatu Anda"</b></h3>
+        <h2><b>"Kami Akan Mengatasi Kemalangan Sepatu Anda"</b></h2>
     </div>
     <!-- akhir background -->
 
